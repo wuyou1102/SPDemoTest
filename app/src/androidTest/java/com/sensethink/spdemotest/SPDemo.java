@@ -31,8 +31,9 @@ public class SPDemo {
     private Context mContext = null;
 
     @BeforeClass
-    public static void BeforeClass() {
+    public static void BeforeClass() throws Exception {
         Log.i("wuyou", "SPDemo Test Start.");
+        SPDemo.Login("13641746250","123456");
     }
 
     @AfterClass()
@@ -68,7 +69,7 @@ public class SPDemo {
     public void RepeatSetAndClearUID() throws Exception {
     }
 
-    public void Login(String Account, String Password) {
+    public void Login(String Account, String Password) throws IOException{
         Operate.StartApp("com.senseplay.spdemo", ".test.LoginActivity");
 
     }

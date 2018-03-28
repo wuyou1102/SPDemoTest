@@ -12,9 +12,10 @@ import java.io.IOException;
 
 public class Operate {
 
+    public static LogUnit mLog = new LogUnit("wuyou", "/sdcard/aaa/");
 
-    public static void Info(String msg) {
-        Log.i("wuyou", msg);
+    public static void Info(Object msg) {
+        mLog.
     }
 
 
