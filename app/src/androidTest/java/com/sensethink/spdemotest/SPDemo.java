@@ -88,6 +88,7 @@ public class SPDemo {
     public void RepeatSwitchUSB() throws Exception {
         mDevice.findObject(new UiSelector().text("搜索设备")).click();
         for (int i = 0; i < 100; i++) {
+            Operate.Info(i);
             mDevice.findObject(new UiSelector().text("OPEN USB")).click();
             mDevice.findObject(new UiSelector().text("CLOSE USB")).click();
         }

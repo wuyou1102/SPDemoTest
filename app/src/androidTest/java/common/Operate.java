@@ -2,7 +2,12 @@ package common;
 
 import android.graphics.Path;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObject2;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiSelector;
 
 import com.sensethink.spdemotest.SPDemo;
 
@@ -51,6 +56,19 @@ public class Operate {
         } catch (Exception InterruptedException) {
             Operate.Error("millisecond:" + millisecond);
         }
+    }
+
+    public static void ClickIfExists(UiSelector selector) throws UiObjectNotFoundException {
+        UiDevice mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        UiObject obj = mDevice.findObject(selector);
+        if (obj.exists()) {
+            obj.click();
+        }
+    }
+
+    public static void Click(UiSelector selector) throws UiObjectNotFoundException {
+        UiDevice mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        mDevice.findObject(selector).click();
     }
 }
 
